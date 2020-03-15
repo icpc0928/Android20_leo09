@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -18,11 +19,16 @@ public class MainActivity extends AppCompatActivity {
 
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
+    private Button test5,test6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        test5 = findViewById(R.id.test5);
+        test6 = findViewById(R.id.test6);
+
+
                                         //這個config會變成檔名 存在 data/data/leo09/shared_prefs
         sp = getSharedPreferences("config",MODE_PRIVATE);
         editor = sp.edit();
@@ -73,5 +79,16 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
         }
+    }
+    //多按鈕監聽事件
+    public void test56(View view) {
+        Button btn = (Button)view;
+        Log.v("Leo",btn.getText().toString());
+        if(view == test5){
+            Log.v("leo","test5");
+        }else if (view == test6){
+            Log.v("leo","test6");
+        }
+
     }
 }
