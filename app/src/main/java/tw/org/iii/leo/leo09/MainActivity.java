@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         editor = sp.edit();
 
     }
-
+    //偏好設定
     public void test1(View view) {
         //玩到第四關要給人家存起來
         editor.putInt("stage",(int)(Math.random()*49+1));
